@@ -1,0 +1,6 @@
+python-telegram-bot==21.9
+requests==2.32.3
+urllib3==2.2.3
+rarfile==4.2
+py7zr==0.22.0
+PyYAML==6.0.2
