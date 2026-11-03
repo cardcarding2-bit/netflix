@@ -9,6 +9,7 @@ Supports:
   • Multi-threaded checking (5 threads by default)
   • Instant hit notifications with full account info + PC/MOBILE/TV buttons
 """
+from __future__ import annotations  # fixes type hints on Python 3.9/3.10/3.11
 
 import asyncio
 import html
@@ -1056,7 +1057,7 @@ async def _start_bulk(
 
     app     = context.application
     chat_id = update.effective_chat.id
-    main_loop = asyncio.get_event_loop()   # capture the running bot loop
+    main_loop = asyncio.get_running_loop()   # capture the running bot loop
 
     t = threading.Thread(
         target=_run_bulk_check,
